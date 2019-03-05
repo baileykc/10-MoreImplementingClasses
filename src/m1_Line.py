@@ -298,7 +298,7 @@ class Line(object):
         # ---------------------------------------------------------------------
         return (self.start == line2.start) and (self.end == line2.end)
 
-    def clone(self, line1, line2):
+    def clone(self):
         """
         What comes in:
           -- self
@@ -328,7 +328,7 @@ class Line(object):
           :rtype: Line
         """
         # ---------------------------------------------------------------------
-        # TODO: 4.
+        # Done: 4.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -337,7 +337,11 @@ class Line(object):
         #        They include the Example in the above doc-string.
         # ---------------------------------------------------------------------
 
-        line1
+        p1 = self.start
+        p2 = self.end
+        line1 = Line(p1, p2)
+        return line1
+
 
 
 
@@ -366,7 +370,7 @@ class Line(object):
             print(line1 == line2)    # Should now print: True
         """
         # ---------------------------------------------------------------------
-        # TODO: 5.
+        # Done: 5.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -374,6 +378,9 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # ---------------------------------------------------------------------
+        temp = self.end
+        self.end = self.start
+        self.start = temp
 
     def slope(self):
         """
@@ -410,6 +417,8 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # ---------------------------------------------------------------------
+
+        
 
     def length(self):
         """
