@@ -409,7 +409,7 @@ class Line(object):
           :rtype: float
         """
         # ---------------------------------------------------------------------
-        # TODO: 6.
+        # Done: 6.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -417,8 +417,15 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # ---------------------------------------------------------------------
+        if self.end.x - self.start.x > 0:
+            p1 = self.start
+            p2 = self.end
+            slope = (p2.y - p1.y)/(p2.x - p1.x)
+            return slope
+        else:
+            return math.inf
 
-        
+
 
     def length(self):
         """
